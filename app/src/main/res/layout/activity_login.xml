@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/imgvn"
+        tools:context=".login">
+
+
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="username"
+        tools:ignore="MissingConstraints" />
+
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="password"
+        app:layout_constraintTop_toBottomOf="@+id/plogin1"
+        tools:layout_editor_absoluteX="51dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bsignup"
+            android:layout_width="190dp"
+            android:layout_height="80dp"
+            android:onClick="signup"
+            android:background="@color/colorPrimary"
+            android:text="SIGNUP"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="190dp"
+            android:layout_height="80dp"
+            android:background="#FF0000"
+            android:text="LOGIN"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/imgvn"
+    tools:context=".signup">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTRATION"
+        android:textColor="#F00"
+        android:layout_gravity="center"
+        />
+
+    <EditText
+        android:id="@+id/rname"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Name"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="162dp" />
+
+    <EditText
+        android:id="@+id/raddress"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="address"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <EditText
+        android:id="@+id/remail"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="email"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="344dp" />
+
+    <EditText
+        android:id="@+id/rphno"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="phno"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="424dp" />
+
+    <EditText
+        android:id="@+id/rpsw"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="password"
+        tools:layout_editor_absoluteX="73dp"/>
+
+    <EditText
+        android:id="@+id/rcpsw"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="confirm password"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="502dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/rclear"
+            android:layout_width="190dp"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimary"
+            android:hint="CLEAR"
+            tools:ignore="MissingConstraints"
+            />
+        <Button
+            android:id="@+id/rsubmit"
+            android:layout_width="190dp"
+            android:layout_height="80dp"
+            android:background="#FF0000"
+            android:hint="SUBMIT"
+            tools:ignore="MissingConstraints"
+            />
+    </LinearLayout>
+</LinearLayout>

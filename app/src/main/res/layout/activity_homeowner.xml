@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/imgvn"
+    tools:context=".Homeowner">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OWNER HOME"
+        android:textColor="#F00"
+        android:layout_gravity="center"
+        />
+
+
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bsalesordr"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:background="#FFFF00"
+            android:text="SALES ORDER"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/bpurchsordr"
+            android:layout_marginStart="10dp"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:background="#FFFF00"
+            android:text="PURCHASE ORDER"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:layout_marginStart="10dp"
+            android:id="@+id/baddprdct"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:onClick="addproduct"
+            android:background="#FFFF00"
+            android:text="ADD PRODUCT"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:layout_marginStart="10dp"
+            android:id="@+id/baddroute"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:background="#FFFF00"
+            android:text="ADD ROUTE"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_marginBottom="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/baddcusvend"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:background="#FFFF00"
+            android:text="ADD CUSTOMER/VENDOR"
+            android:layout_marginStart="10dp"
+
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:layout_marginStart="10dp"
+            android:id="@+id/saleshistry"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:background="#FFFF00"
+            android:text="SALES HISTORY"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginBottom="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/bpurchshstry"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+
+            android:background="#FFFF00"
+            android:text="PURCHASE HISTORY"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:layout_marginStart="10dp"
+            android:id="@+id/breport"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:background="#FFFF00"
+            android:text="REPORT"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+
+
+        <Button
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="80dp"
+            android:id="@+id/bstockview"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:background="#FFFF00"
+            android:text="STOCK VIEW"
+            tools:ignore="MissingConstraints" />
+
+</LinearLayout>
+
+
+

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/imgvn"
+    tools:context=".Addproduct">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PRODUCT CREATION"
+        android:textColor="#F00"
+        android:layout_gravity="center"
+        />
+
+    <EditText
+        android:id="@+id/pname"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="product name"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="catogory" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="Catogory"
+
+        app:layout_constraintTop_toBottomOf="@+id/plogin1"/>
+
+
+    <EditText
+        android:id="@+id/qty"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+
+        android:ems="10"
+        android:inputType="number"
+        android:hint="quantity"
+        app:layout_constraintTop_toBottomOf="@+id/plogin1"
+        tools:layout_editor_absoluteX="51dp" />
+
+
+    <EditText
+        android:id="@+id/srate"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="sales rate"
+        app:layout_constraintTop_toBottomOf="@+id/plogin1"
+        tools:layout_editor_absoluteX="51dp" />
+    <EditText
+        android:id="@+id/prate"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="purchase rate"
+        app:layout_constraintTop_toBottomOf="@+id/plogin1"
+        tools:layout_editor_absoluteX="51dp" />
+
+    <EditText
+        android:id="@+id/edate"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="date"
+        android:hint="expiry date(D-M-Y)"
+        app:layout_constraintTop_toBottomOf="@+id/plogin1"
+        tools:layout_editor_absoluteX="51dp" />
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bcancel"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary"
+            android:text="CANCEL"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/bok"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:background="#FF0000"
+            android:text="OK"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+</LinearLayout>
+
+
+
+
