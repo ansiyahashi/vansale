@@ -28,6 +28,7 @@ public class Cusvend extends AppCompatActivity {
     public String selectedcategory;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
