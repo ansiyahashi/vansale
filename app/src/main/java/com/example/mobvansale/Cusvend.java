@@ -23,6 +23,7 @@ public class Cusvend extends AppCompatActivity {
     EditText address;
     EditText email;
     EditText phno;
+
     EditText discount;
     Addcusvenddata addcusvenddata1;
     public String selectedcategory;
