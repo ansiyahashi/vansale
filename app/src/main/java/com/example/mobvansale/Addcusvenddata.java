@@ -18,7 +18,7 @@ public class Addcusvenddata extends DatabaseHandlerController {
     public static final String Column_Id = "CV_ID";
     public static final String Column_cvname  = "CV_NAME";
     public static final String Column_shname  = "SH_NAME";
-
+    public static final String Column_cust_vend  = "CUST_VEND ";
 
 
     public static final String Column_address = "ADDRESS";
@@ -47,11 +47,11 @@ public class Addcusvenddata extends DatabaseHandlerController {
 
 
         try {
-            String[] fields_ar = { Column_cvname, Column_shname, Column_address,
+            String[] fields_ar = { Column_cvname, Column_shname, Column_cust_vend, Column_address,
                     Column_phno, Column_email,Column_creditbalance,Column_rid,Column_status,Column_discount};
 
-            Object[] values_ar = new Object[]{addcusvenddatamodel.getcvname(),
-                    addcusvenddatamodel.getshname(), addcusvenddatamodel.getaddress(), addcusvenddatamodel.getphno(), addcusvenddatamodel.getemail(), addcusvenddatamodel.getcreditbalance(), addcusvenddatamodel.getrid(), addcusvenddatamodel.getstatus(), addcusvenddatamodel.getdiscount()};
+            Object[] values_ar = new Object[]{addcusvenddatamodel.getCvname(),
+                    addcusvenddatamodel.getShname(),addcusvenddatamodel.getCust_vend(),addcusvenddatamodel.getAddress(), addcusvenddatamodel.getPhno(), addcusvenddatamodel.getEmail(), 0 , addcusvenddatamodel.getRid(), 1 ,addcusvenddatamodel.getDiscount()};
             String values = "", fields = "";
 
 
