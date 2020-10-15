@@ -89,6 +89,50 @@ public class Addcusvenddata extends DatabaseHandlerController {
         }
 
     }
+    public List<Addcusvenddatamodel>  selectAllCustomers() {
+
+
+        String query = "select * from " + TABLE_NAME +" where "+Column_cust_vend+" = 'customer'";
+
+        ArrayList<ArrayList<String>> result = super.executeQuery(context, query);
+
+        return prepareModel(result);
+    }
+
+    public List<Addcusvenddatamodel>  selectAllVendors() {
+
+
+        String query = "select * from " + TABLE_NAME +" where "+Column_cust_vend+" = 'vendor'";
+
+        ArrayList<ArrayList<String>> result = super.executeQuery(context, query);
+
+        return prepareModel(result);
+    }
+
+
+    private List<Addcusvenddatamodel> prepareModel(ArrayList<ArrayList<String>> data  ) {
+
+
+        List<Addcusvenddatamodel> addcusvenddatamodels= new ArrayList<>();
+        for (ArrayList<String> tuple : data) {
+            Addcusvenddatamodel temp = new Addcusvenddatamodel();
+
+            temp.setId(CommonUtils.toInt(tuple.get(0)));
+            temp.setCvname(tuple.get(1));
+            temp.setShname(tuple.get(2));
+            temp.setCust_vend(tuple.get(3));
+            temp.setAddress(tuple.get(4));
+            temp.setAddress(tuple.get(5));
+            temp.setEmail(tuple.get(6));
+            temp.setPhno(tuple.get(7));
+            temp.setRid(tuple.get(8));
+            temp.setDiscount(tuple.get(9));
+            addcusvenddatamodels.add(temp);
+        }
+        return addcusvenddatamodels;
+    }
+
+
 
 }
 
