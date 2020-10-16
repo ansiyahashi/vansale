@@ -77,7 +77,7 @@ public class Addproduct extends AppCompatActivity implements AdapterView.OnItemS
                     toast.show();
                 } else {
 
-                         Productinsertionmodel productinsertionmodel = new Productinsertionmodel();
+                        Productinsertionmodel productinsertionmodel = new Productinsertionmodel();
                        productinsertionmodel.setPname(pname.getText().toString());
                      productinsertionmodel.setCatogry(selectedcategory);
                      productinsertionmodel.setQty(qty.getText().toString());

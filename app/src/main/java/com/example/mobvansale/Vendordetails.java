@@ -9,7 +9,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vendordetails extends AppCompatActivity {
+public class Vendordetails extends AppCompatActivity implements OncompletCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +28,19 @@ public class Vendordetails extends AppCompatActivity {
 
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-        MyListAdapter adapter = new MyListAdapter(addcusvenddatamodels);
+        MyListAdapter adapter = new MyListAdapter(addcusvenddatamodels,this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onclick(Object data) {
+
+    }
+
+    @Override
+    public void onQtyclick(int qty, String price) {
+
     }
 }

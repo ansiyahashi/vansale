@@ -9,12 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Cusvend"></activity>
+        <activity android:name=".SalesOrderActivity"></activity>
+        <activity android:name=".Vendordetails" />
+        <activity android:name=".Customerdetails" />
+        <activity android:name=".Cusvend" />
         <activity android:name=".Smaddcustomer" />
         <activity android:name=".Smstockview" />
         <activity android:name=".Smpurchaseorder" />
         <activity android:name=".Smsalesorder" />
-        <activity android:name=".Addcusvend"></activity>
         <activity android:name=".Report" />
         <activity android:name=".Stockview" />
         <activity android:name=".Purchasehistory" />

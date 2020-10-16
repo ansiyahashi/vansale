@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:padding="3dp"
+    >
+
+    <TextView
+        android:id="@+id/slno"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:textColor="#F00"
+        android:gravity="center_vertical"
+        android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/productname"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textColor="#F00"
+            android:gravity="center_vertical"
+            android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/qty"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:textColor="#F00"
+        android:gravity="center_vertical"
+        android:textSize="10sp" />
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="#F00"
+        android:gravity="center_vertical"
+        android:textSize="10sp"/>
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="#F00"
+        android:gravity="center_vertical"
+        android:textSize="10sp"/>
+
+
+
+</LinearLayout>

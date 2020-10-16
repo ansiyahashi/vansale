@@ -104,12 +104,12 @@ public class Homeowner extends AppCompatActivity {
     }
     public void salesorder()
     {
-        Intent intent=new Intent(Homeowner.this, Salesorder.class);
+        Intent intent=new Intent(Homeowner.this, Customerdetails.class);
         startActivity(intent);
     }
     public void purchaseorder()
     {
-        Intent intent=new Intent(Homeowner.this, Purchaseorder.class);
+        Intent intent=new Intent(Homeowner.this, Vendordetails.class);
         startActivity(intent);
     }
     public void addroute()

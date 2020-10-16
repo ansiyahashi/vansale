@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Customerdetails extends AppCompatActivity {
+public class Customerdetails extends AppCompatActivity implements OncompletCallback {
 
 
         @Override
@@ -37,9 +38,22 @@ public class Customerdetails extends AppCompatActivity {
 
 
             RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-            MyListAdapter adapter = new MyListAdapter(addcusvenddatamodels);
+            MyListAdapter adapter = new MyListAdapter(addcusvenddatamodels,this);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setAdapter(adapter);
         }
+
+    @Override
+    public void onclick(Object data) {
+        Addcusvenddatamodel addcusvenddatamodel=(Addcusvenddatamodel)data;
+        Intent intent=new Intent(this, SalesOrderActivity.class);
+        intent.putExtra("customerId",addcusvenddatamodel.getId());
+        startActivity(intent);
+    }
+
+    @Override
+    public void onQtyclick(int qty, String price) {
+
+    }
 }

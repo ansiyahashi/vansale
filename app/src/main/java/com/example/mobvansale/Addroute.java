@@ -33,7 +33,7 @@ EditText landmark;
                     Routeinsertionmodel routeinsertionmodel=new Routeinsertionmodel();
 
 
-                    routeinsertionmodel.setrname(routename.getText().toString());
+                    routeinsertionmodel.setRname(routename.getText().toString());
                     routeinsertionmodel.setLandmark(landmark.getText().toString());
                     Routeinsertion.insert(routeinsertionmodel);
                     clearAll();

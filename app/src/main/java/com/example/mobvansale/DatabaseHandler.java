@@ -104,10 +104,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
            db.execSQL("CREATE TABLE IF NOT EXISTS Product(  P_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , P_NAME TEXT," +
-                    " CATOGORY TEXT ,C_QTY INTEGER, S_PRICE INTEGER , P_PRICE INTEGER,EXPRYDATE DATE )");
+                    " CATOGORY TEXT ,C_QTY INTEGER, S_PRICE INTEGER , P_PRICE INTEGER,EXPRY_DATE" +
+                   " TEXT )");
 
-            //  db.execSQL("CREATE TABLE IF NOT EXISTS order (  O_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , CV_ID FOREIGN KEY," +
-            // " DATE DATE , DISCOUNT INTEGER , IS_PUR_SALE INTEGER , STATUS INTEGER  )");
+            db.execSQL("CREATE TABLE IF NOT EXISTS Product(  P_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , P_NAME TEXT," +
+                    " CATOGORY TEXT ,C_QTY INTEGER, S_PRICE INTEGER , P_PRICE INTEGER,EXPRY_DATE" +
+                    " TEXT )");
+
+
+              db.execSQL("CREATE TABLE IF NOT EXISTS SalesOrder (  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , customerid INTEGER," +
+             " customerName TEXT , DISCOUNT INTEGER , isSales INTEGER , STATUS TEXT  )");
+
+            db.execSQL("CREATE TABLE IF NOT EXISTS OrderLines (  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , orderId INTEGER," +
+                    " productId INTEGER , productName TEXT , qty INTEGER , amount INTEGER  )");
 
 
             db.setTransactionSuccessful();

@@ -6,32 +6,29 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Productinsertion  extends DatabaseHandlerController{
-    public static final String TABLE_NAME = "Product";
+public class OrderLines  extends DatabaseHandlerController{
+    public static final String TABLE_NAME = "OrderLines";
 
-    public static final String Column_Id = "P_ID";
-    public static final String Column_pname  = "P_NAME";
-    public static final String Column_catogory  = "CATOGORY";
-
-
-
-    public static final String Column_qty  = "C_QTY";
-    public static final String Column_sprice = "S_PRICE";
-    public static final String Column_pprice = "P_PRICE";
-    public static final String Column_date  = "EXPRY_DATE";
+    public static final String Column_Id = "id";
+    public static final String orderId  = "orderId";
+    public static final String productId  = "productId";
+    public static final String productName  = "productName";
+    public static final String qty = "qty";
+    public static final String amount = "amount";
     private final Context context;
 
     private DatabaseHandler dbhelper;
     private SQLiteDatabase sqliteDB;
 
-    public Productinsertion(Context context) {
+    public OrderLines(Context context) {
         this.context = context;
     }
 
-    public void insert(Productinsertionmodel productinsertionmodel) {
+    public void insert(SalesLineModel productinsertionmodel) {
         dbhelper = DatabaseHandler.getInstance(context);
         sqliteDB = dbhelper.getWritableDatabase();
         sqliteDB.beginTransaction();
@@ -40,11 +37,11 @@ public class Productinsertion  extends DatabaseHandlerController{
 
 
         try {
-            String[] fields_ar = { Column_pname, Column_catogory, Column_qty,
-                    Column_sprice, Column_pprice,Column_date};
+            String[] fields_ar = { orderId, productId, productName,
+                    qty, amount};
 
-            Object[] values_ar = { productinsertionmodel.getPname(),
-                    productinsertionmodel.getCatogry(), productinsertionmodel.getQty(), productinsertionmodel.getSrate(), productinsertionmodel.getPrate(),productinsertionmodel.getEdate()};
+            Object[] values_ar = {productinsertionmodel.getOrderId(), productinsertionmodel.getProductId(), productinsertionmodel.getProductName(),
+                    productinsertionmodel.getQty(),productinsertionmodel.getAmount()};
             String values = "", fields = "";
 
 
@@ -75,19 +72,27 @@ public class Productinsertion  extends DatabaseHandlerController{
 
 
 
+        }
+
+    }
+    public String getSumOfLines(int order_Id) {
 
 
+        String query = "select sum(amount*qty) from " + TABLE_NAME+" where orderId="+order_Id; ;
 
-
+        ArrayList<ArrayList<String>> result = super.executeQuery(context, query);
+        if (result!=null){
+            return result.get(0).get(0);
+        }else {
+            return " 0.00";
         }
 
     }
 
+    public List<SalesLineModel>  selectAllLines(int order_Id) {
 
-    public List<Productinsertionmodel>  selectAllProducts() {
 
-
-        String query = "select * from " + TABLE_NAME ;
+        String query = "select * from " + TABLE_NAME+" where orderId="+order_Id; ;
 
         ArrayList<ArrayList<String>> result = super.executeQuery(context, query);
 
@@ -95,18 +100,19 @@ public class Productinsertion  extends DatabaseHandlerController{
     }
 
 
-    private List<Productinsertionmodel> prepareModel(ArrayList<ArrayList<String>> data  ) {
+    private List<SalesLineModel> prepareModel(ArrayList<ArrayList<String>> data  ) {
 
 
-        List<Productinsertionmodel> addcusvenddatamodels= new ArrayList<>();
+        List<SalesLineModel> addcusvenddatamodels= new ArrayList<>();
         for (ArrayList<String> tuple : data) {
-            Productinsertionmodel temp = new Productinsertionmodel();
+            SalesLineModel temp = new SalesLineModel();
 
             temp.setId(CommonUtils.toInt(tuple.get(0)));
-            temp.setPname(tuple.get(1));
-            temp.setSrate(tuple.get(2));
-            temp.setPrate(tuple.get(3));
-            temp.setEdate(tuple.get(4));
+            temp.setOrderId(CommonUtils.toInt(tuple.get(1)));
+            temp.setProductId(CommonUtils.toInt(tuple.get(2)));
+            temp.setProductName(tuple.get(3));
+            temp.setQty(CommonUtils.toBigDecimal(tuple.get(4)));
+            temp.setAmount(CommonUtils.toBigDecimal(tuple.get(5)));
             addcusvenddatamodels.add(temp);
         }
         return addcusvenddatamodels;

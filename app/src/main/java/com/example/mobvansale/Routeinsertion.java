@@ -68,15 +68,14 @@ public class Routeinsertion extends DatabaseHandlerController {
         }
 
     }
-    public Routeinsertionmodel  selectAllFavouriteProducts() {
+    public List<Routeinsertionmodel>  selectAllRoutes() {
 
 
         String query = "select * from " + TABLE_NAME;
 
         ArrayList<ArrayList<String>> result = super.executeQuery(context, query);
-        if (result!=null)
-            return prepareModel(result).get(0);
-        return null;
+
+           return prepareModel(result);
     }
 
     private List<Routeinsertionmodel> prepareModel(ArrayList<ArrayList<String>> data  ) {
@@ -87,7 +86,8 @@ public class Routeinsertion extends DatabaseHandlerController {
             Routeinsertionmodel temp = new Routeinsertionmodel();
 
             temp.setId(CommonUtils.toInt(tuple.get(0)));
-            temp.setrname(tuple.get(1));
+            temp.setRname(tuple.get(1));
+            temp.setLandmark(tuple.get(2));
 
            routeinsertionmodels.add(temp);
         }

@@ -14,10 +14,12 @@ import java.util.List;
 
 public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>{
     List<Addcusvenddatamodel> listdata;
+    OncompletCallback oncompletCallback;
 
     // RecyclerView recyclerView;
-    public MyListAdapter(List<Addcusvenddatamodel> listdata) {
+    public MyListAdapter(List<Addcusvenddatamodel> listdata,OncompletCallback oncompletCallback) {
         this.listdata = listdata;
+        this.oncompletCallback=oncompletCallback;
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -36,7 +38,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
             @Override
             public void onClick(View view) {
 
-
+               oncompletCallback.onclick(myListData);
 
                 Toast.makeText(view.getContext(),"click on item: "+myListData.getCvname(),Toast.LENGTH_LONG).show();
             }

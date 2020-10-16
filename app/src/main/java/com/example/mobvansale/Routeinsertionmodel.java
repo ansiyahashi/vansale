@@ -7,15 +7,19 @@ public class Routeinsertionmodel {
     String landmark;
 
 
-
-
-
-
-    public String getRname() {
-        return this.rname;
+    public int getId() {
+        return id;
     }
 
-    public void setrname(String phno) {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getRname() {
+        return rname;
+    }
+
+    public void setRname(String rname) {
         this.rname = rname;
     }
 
@@ -26,15 +30,5 @@ public class Routeinsertionmodel {
     public void setLandmark(String landmark) {
         this.landmark = landmark;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
 }
 
