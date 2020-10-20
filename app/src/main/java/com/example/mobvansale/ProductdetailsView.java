@@ -10,16 +10,16 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stockview extends AppCompatActivity implements OncompletCallback  {
+public class ProductdetailsView extends AppCompatActivity implements OncompletCallback  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stockview);
+        setContentView(R.layout.activity_productdetails_view);
 
 
         List<String> categories = new ArrayList<String>();
-        Productinsertion productinsertion = new Productinsertion(this);
+       Productinsertion productinsertion = new Productinsertion(this);
         List<Productinsertionmodel> productinsertionmodels=productinsertion.selectAllProducts();
 
         for (Productinsertionmodel productinsertionmodel:productinsertionmodels){
@@ -28,8 +28,10 @@ public class Stockview extends AppCompatActivity implements OncompletCallback  {
 
             categories.add(productinsertionmodel.getQty());
 
+            categories.add(productinsertionmodel.getSrate());
 
-
+            categories.add(productinsertionmodel.getPrate());
+            categories.add(productinsertionmodel.getEdate());
 
 
         }
@@ -37,8 +39,8 @@ public class Stockview extends AppCompatActivity implements OncompletCallback  {
 
 
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.srecyclerview);
-        StockviewAdapter adapter = new StockviewAdapter(productinsertionmodels,this);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        ListofproductsAdapter adapter = new ListofproductsAdapter(productinsertionmodels,this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);

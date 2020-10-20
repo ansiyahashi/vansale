@@ -5,16 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Stockview">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="STOCK VIEW"
-        android:textColor="#F00"
-        android:layout_gravity="center"
-        />
+    android:background="@drawable/imgvn"
+    tools:context=".RouteView">
+
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/srecyclerview"
+        android:id="@+id/Rrecyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

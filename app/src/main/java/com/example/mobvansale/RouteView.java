@@ -10,25 +10,21 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stockview extends AppCompatActivity implements OncompletCallback  {
+public class RouteView extends AppCompatActivity implements OncompletCallback  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stockview);
+        setContentView(R.layout.activity_route_view);
 
 
         List<String> categories = new ArrayList<String>();
-        Productinsertion productinsertion = new Productinsertion(this);
-        List<Productinsertionmodel> productinsertionmodels=productinsertion.selectAllProducts();
+        Routeinsertion routeinsertion = new Routeinsertion(this);
+        List<Routeinsertionmodel> routeinsertionmodels=routeinsertion.selectAllRoutes();
 
-        for (Productinsertionmodel productinsertionmodel:productinsertionmodels){
-            categories.add(productinsertionmodel.getPname());
-            categories.add(productinsertionmodel.getCatogry());
-
-            categories.add(productinsertionmodel.getQty());
-
-
+        for (Routeinsertionmodel routeinsertionmodel:routeinsertionmodels){
+            categories.add(routeinsertionmodel.getRname());
+            categories.add(routeinsertionmodel.getLandmark());
 
 
 
@@ -37,8 +33,8 @@ public class Stockview extends AppCompatActivity implements OncompletCallback  {
 
 
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.srecyclerview);
-        StockviewAdapter adapter = new StockviewAdapter(productinsertionmodels,this);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.Rrecyclerview);
+        ListofrouteAdapter adapter = new ListofrouteAdapter(routeinsertionmodels,this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
@@ -46,7 +42,7 @@ public class Stockview extends AppCompatActivity implements OncompletCallback  {
 
     @Override
     public void onclick(Object data) {
-        Productinsertionmodel productinsertionmodel=(Productinsertionmodel) data;
+        Routeinsertionmodel routeinsertionmodel=(Routeinsertionmodel) data;
         Intent intent=new Intent(this, Homeowner.class);
 
         startActivity(intent);
