@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#FFFF00"
+    android:layout_height="match_parent"
+    android:padding="1dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textAlignment="center"
+            android:textSize="35dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="PAYMENT"></TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textColor="@color/colorblack"
+            android:text="Total"></TextView>
+        <EditText
+            android:background="@color/colorwhite"
+            android:id="@+id/total"
+            android:layout_width="250dp"
+            android:layout_height="40dp"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textColor="@color/colorblack"
+            android:text="Discount"></TextView>
+        <EditText
+            android:background="@color/colorwhite"
+            android:id="@+id/discount"
+            android:layout_width="250dp"
+            android:layout_height="40dp"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textColor="@color/colorblack"
+            android:text="Old Balance"></TextView>
+        <EditText
+            android:background="@color/colorwhite"
+            android:id="@+id/oldbalance"
+            android:layout_width="250dp"
+            android:layout_height="40dp"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textColor="@color/colorblack"
+            android:text="New Balance"></TextView>
+        <EditText
+            android:background="@color/colorwhite"
+            android:id="@+id/newbalance"
+            android:layout_width="250dp"
+            android:layout_height="40dp"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textColor="@color/colorblack"
+            android:text="Credit Balance"></TextView>
+        <EditText
+            android:background="@color/colorwhite"
+            android:id="@+id/creditbalance"
+            android:layout_width="250dp"
+            android:layout_height="40dp"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textColor="@color/colorblack"
+            android:text="Amount Paid"></TextView>
+        <EditText
+            android:background="@color/colorwhite"
+            android:id="@+id/amountPAid"
+            android:layout_width="250dp"
+            android:layout_height="40dp"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textColor="@color/colorblack"
+            android:text="Type"></TextView>
+        <Spinner
+            android:background="@color/colorwhite"
+            android:id="@+id/spinner"
+            android:layout_width="250dp"
+            android:layout_height="40dp"></Spinner>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="35dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="OK"></Button>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

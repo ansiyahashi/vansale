@@ -1,5 +1,6 @@
 package com.example.mobvansale;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,7 @@ public class SalesLineAdappter extends RecyclerView.Adapter<SalesLineAdappter.Vi
             holder.name.setText("Product Name");
             holder.slno.setText("SlNo");
             holder.total.setText("Total");
+            holder.itemView.setBackgroundColor(Color.parseColor("#03DAC5"));
         } else {
             final SalesLineModel myListData = listdata.get(position-1);
             holder.price.setText(myListData.getAmount().toString());
@@ -72,7 +74,7 @@ public class SalesLineAdappter extends RecyclerView.Adapter<SalesLineAdappter.Vi
         public ViewHolder(View itemView) {
             super(itemView);
             this.name = (TextView) itemView.findViewById(R.id.productname);
-            this.price = (TextView) itemView.findViewById(R.id.price);
+            this.price = (TextView) itemView.findViewById(R.id.srate);
             this.qty = (TextView) itemView.findViewById(R.id.qty);
             this.slno = (TextView) itemView.findViewById(R.id.slno);
             this.total = (TextView) itemView.findViewById(R.id.total);
