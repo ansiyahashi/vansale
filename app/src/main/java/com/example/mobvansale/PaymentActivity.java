@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,6 +27,8 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private String selectedType;
     java.math.BigDecimal tcdotal;
     java.math.BigDecimal creditbal;
+    java.math.BigDecimal Discount;
+    java.math.BigDecimal tot;
     int customerID;
     int OrderId;
     OrderDto salesorder;
@@ -45,12 +48,14 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         salesorder=new OrderDto(getApplicationContext());
         total=(EditText)findViewById(R.id.total);
         oldbalance=(EditText)findViewById(R.id.oldbalance);
+        discount=(EditText)findViewById(R.id.discount);
         newbalance=(EditText)findViewById(R.id.newbalance);
         creditbalance=(EditText)findViewById(R.id.creditbalance);
         amountpaid=(EditText)findViewById(R.id.amountPAid);
         spinner=(Spinner) findViewById(R.id.spinner);
 
         total.setText(grantTotal);
+        discount.setText(customwerModel.getDiscount());
         oldbalance.setText(customwerModel.getCreditBalance());
 
         if (grantTotal!=null){
@@ -63,7 +68,10 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         }else {
             creditbal= java.math.BigDecimal.ZERO;
         }
-
+        Discount=CommonUtils.toBigDecimal(customwerModel.getDiscount());
+        tot=tcdotal;
+        tot=tcdotal.multiply(Discount.divide(BigDecimal.valueOf(100)));
+        tcdotal=tot.add(tcdotal);
         newBalance=creditbal.add(tcdotal);
         newbalance.setText(newBalance.toString());
         creditbalance.setText(newBalance.toString());
@@ -97,7 +105,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                 }else {
                     customer.update((creditbal.add(tcdotal)).subtract(CommonUtils.toBigDecimal(amountpaid.getText().toString())).toString(),customerID);
                 }
-                String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+                String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
                 salesorder.updatedate(date,OrderId);
                 salesorder.update("C", OrderId);
                 Toast.makeText(getApplicationContext(),"Payment Completed",Toast.LENGTH_SHORT).show();
